@@ -1,0 +1,22 @@
+##Program 2
+##(a+b)^3=a^3+b^3+3(a*b)(a+b)
+
+import tensorflow as tf
+a=tf.add(1,1)
+b=tf.add(1,1)
+c=tf.multiply(a,a)
+d=tf.multiply(c,a)
+g=tf.multiply(b,b)
+j=tf.multiply(g,b)
+k=tf.multiply(a,b)
+i=tf.multiply(3,k)
+o=tf.add(a,b)
+y=tf.multiply(i,o)
+u=tf.add(d,j)
+p=tf.add(u,y)
+
+with tf.Session() as sess:
+    writer = tf.summary.FileWriter("/tmp/tboard/output", sess.graph)
+    print(sess.run(p))
+    writer.close()
+

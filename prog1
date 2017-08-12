@@ -1,0 +1,18 @@
+##Program 1
+## (a+b)^2=a^2+b^2+2(a*b)
+import tensorflow as tf
+a=tf.add(1,1)
+b=tf.add(1,1)
+c=tf.multiply(a,a)
+d=tf.multiply(b,b)
+f=tf.multiply(2,a)
+h=tf.multiply(f,b)
+g=tf.add(c,d)
+j=tf.add(g,h)
+
+
+
+with tf.Session() as sess:
+    writer = tf.summary.FileWriter("/tmp/tboard/output", sess.graph)
+    print(sess.run(j))
+    writer.close()
